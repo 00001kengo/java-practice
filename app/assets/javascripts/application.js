@@ -10,7 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+let promptStr = prompt('何か好きな文字を入力してください。');
+
+alert(promptStr);
