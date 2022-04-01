@@ -29,6 +29,12 @@
   background-image: url(test5.jpg);
 }
 
+.box {
+  height: 300px;
+  width: 600px;
+  margin: 0 auto 50px;
+  background-color: #eee;
+}
 #container{
   height: 500px;
 }
