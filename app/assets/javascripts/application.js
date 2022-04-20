@@ -118,3 +118,35 @@ class Main {
     System.out.println("名前は" + name + "です");
   }
 }
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("名前：");
+    String name = scanner.next();
+    
+    System.out.print("名字：");
+    String lastName = scanner.next();
+    
+    System.out.print("年齢：");
+    int age = scanner.nextInt();
+    
+    System.out.print("身長(m)：");
+    int height = scanner.nextInt();
+    
+    System.out.print("体重(kg)：");
+    int weight = scanner.nextInt();
+    
+    System.out.println("名前は" + name + lastName + "です");
+    System.out.println("年齢は" + age +"歳です");
+    if(age >= 20){
+      System.out.println("成年者です");
+      }else{
+        System.out.println("未成年者です");
+      
+    }
+    System.out.println("身長は" + height + "です");
+    System.out.println("体重は" + weight + "です");
+    
+  }
+}
