@@ -147,6 +147,10 @@ class Main {
     }
     System.out.println("身長は" + height + "です");
     System.out.println("体重は" + weight + "です");
+    double BMI = bmi(height, weight);
     
+  }
+   public static double bmi(double height, double weight) {
+    return weight / height / height;
   }
 }
