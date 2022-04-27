@@ -153,4 +153,9 @@ class Main {
    public static double bmi(double height, double weight) {
     return weight / height / height;
   }
+  
+  int n = scanner.nextInt();
+    
+    for (int i = 0; i < n; i++) {
+      System.out.println(i + 1 + "人目");
 }
