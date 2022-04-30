@@ -59,103 +59,46 @@ $(function() {
   });
 });
 
-$class Main {
-  public static void main(String[] args) {
-    // 変数numbersに、与えられた数字の配列を代入してください
-    int[] numbers = {1, 4, 6, 9, 13, 16};
-    
-    int oddSum = 0;
-    int evenSum = 0;
-    
-    // for文を用いて、配列numbersの偶数の和と奇数の和を求めてください
-    for(int i=0; i<numbers.length; i++){
-      if(numbers[i]%2 == 0){
-        evenSum += numbers[i];
-      }else{
-        oddSum += numbers[i];
-      }
-    }
-
-    System.out.println("奇数の和は" + oddSum + "です");
-    System.out.println("偶数の和は" + evenSum + "です");
-  }
-  
-  
-  $class Main {
-  public static void main(String[] args) {
-    // fullNameメソッドの結果を変数nameに代入してください
-    String name = fullName("Kate","Jones");
-    
-    
-    // printDataの引数を書き換えてください
-    printData(name, 27);
-    
-    // こちらは書き換えないでください
-    printData("John Christopher Smith", 65);
-    
-  }
-
-  public static void printData(String name, int age) {
-    System.out.println("私の名前は" + name + "です");
-    System.out.println("年齢は" + age + "歳です");
-  }
-
-  // fullNameメソッドを定義してください
-  public static String fullName(String firstName,String lastName) {
-    return firstName + " " + lastName;
-  }
-  
-}
-import java.util.Scanner;
-
 class Main {
+  
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     
-    System.out.print("名前：");
-    String name = scanner.next();
+    System.out.print("何人分の情報を入力しますか：");
+    int n = scanner.nextInt();
     
-    System.out.println("名前は" + name + "です");
-  }
-}
-class Main {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    
-    System.out.print("名前：");
-    String name = scanner.next();
-    
-    System.out.print("名字：");
-    String lastName = scanner.next();
-    
-    System.out.print("年齢：");
-    int age = scanner.nextInt();
-    
-    System.out.print("身長(m)：");
-    int height = scanner.nextInt();
-    
-    System.out.print("体重(kg)：");
-    int weight = scanner.nextInt();
-    
-    System.out.println("名前は" + name + lastName + "です");
-    System.out.println("年齢は" + age +"歳です");
-    if(age >= 20){
-      System.out.println("成年者です");
-      }else{
-        System.out.println("未成年者です");
-      
-    }
-    System.out.println("身長は" + height + "です");
-    System.out.println("体重は" + weight + "です");
-    double BMI = bmi(height, weight);
-    
-  }
-   public static double bmi(double height, double weight) {
-    return weight / height / height;
-  }
-  
-  int n = scanner.nextInt();
+    int maxAge = 0;
+    int totalAge = 0;
     
     for (int i = 0; i < n; i++) {
       System.out.println(i + 1 + "人目");
+      
+      System.out.print("名前：");
+      String firstname = scanner.next();
+      
+      System.out.print("名字：");
+      String lastName = scanner.next();
+      
+      System.out.print("年齢：");
+      int age = scanner.nextInt();
+      
+      if (age > maxAge){
+        maxAge = age;
+      }
+      
+      totalAge += age;
+      
+      System.out.print("身長(m)：");
+      double height = scanner.nextDouble();
+      
+      System.out.print("体重(kg)：");
+      double weight = scanner.nextDouble();
+      
+      Person.printData(firstname, lastName, age, height, weight);
+    }
+    
+    System.out.println("最高年齢は" + maxAge + "歳です");
+    System.out.println("平均年齢は" + totalAge/n + "歳です");
+  }
+  
 }
